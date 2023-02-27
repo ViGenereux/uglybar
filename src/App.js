@@ -2,6 +2,7 @@ import React from "react";
 import { extendTheme, ChakraProvider } from "@chakra-ui/react";
 import MainPage from "./components/Mainpage";
 import Footer from "./components/footer";
+import { Global } from "@emotion/react";
 
 const colors = {
   body: { overflowX: "hidden" },
@@ -11,12 +12,27 @@ const colors = {
     700: "#2a69ac",
   },
 };
+const fonts = {
+  heading: "Retrolight",
+};
 
-const theme = extendTheme({ colors });
+const Fonts = () => (
+  <Global
+    styles={`
+         /* latin */
+         @font-face {
+           font-family: 'Retrolight';
+           src: local("Retrolight"), url("../fonts/Retrolight.ttf") format("truetype");
+        }
+        `}
+  />
+);
+const theme = extendTheme({ colors, fonts });
 
 const App = () => {
   return (
     <ChakraProvider theme={theme}>
+      <Fonts />
       <MainPage />
     </ChakraProvider>
   );

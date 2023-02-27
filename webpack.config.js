@@ -34,7 +34,7 @@ module.exports = {
         type: "asset/resource",
       },
       {
-        test: /\.svg$/,
+        test: /\.svg|ttf|otf$/,
         use: [
           {
             loader: "svg-url-loader",
