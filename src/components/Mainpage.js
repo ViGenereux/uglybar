@@ -14,11 +14,13 @@ const MainPage = () => {
     `);
   const unBlur = keyframes(`
     from {
-      filter: blur(5px)
+      filter: blur(5px);
+      opacity: 0%;
     }
 
     to {
-      filter: blur(0px)
+      filter: blur(0px);
+      opacity: 100%;
     } 
     `);
   const drawTop = keyframes(`
@@ -124,6 +126,7 @@ const MainPage = () => {
       <Image
         alt="logo"
         maxW="35%"
+        opacity="0%"
         src={require("/public/images/randomMainVector.svg")}
         filter="blur(5px)"
         position="absolute"
